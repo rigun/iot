@@ -14,12 +14,6 @@ const Logout = Vue.component('logout', require('./components/LogoutComponent.vue
 
 const Landing = Vue.component('Landing', require('./components/home/Landing.vue'))
 
-const DashboardContent = Vue.component('DashboardContent', require('./components/dashboard/DashboardComponent.vue'))
-const ManageCatatan = Vue.component('ManageCatatan', require('./components/dashboard/ManageCatatanComponent.vue'))
-const ManageJadwal = Vue.component('ManageJadwal', require('./components/dashboard/ManageJadwalComponent.vue'))
-const ManageArsip = Vue.component('ManageArsip', require('./components/dashboard/ManageArsipComponent.vue'))
-const Resend = Vue.component('Resend', require('./components/dashboard/ResendEmail.vue'))
-
 const MotorCommand = Vue.component('MotorCommand', require('./components/dashboard/MotorCommand.vue'))
 const MotorLocation = Vue.component('MotorLocation', require('./components/dashboard/MotorLocation.vue'))
 const MotorStatus = Vue.component('MotorStatus', require('./components/dashboard/MotorStatus.vue'))

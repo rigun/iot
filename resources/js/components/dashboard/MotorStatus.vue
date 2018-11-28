@@ -3,7 +3,7 @@
         <div class="box">
             <div class="columns">
                 <div class="column is-half">
-                    <a class="button is-large is-fullwidth" :class="{'is-success': command == 1}"><span v-if="command == 1">ON</span><span v-if="command == 0" >Off</span></a>
+                    <a class="button is-large is-fullwidth" :class="{'is-success': command == 1}"><span v-if="command == 1">ON</span><span v-if="command != 1" >Off</span></a>
                 </div>
                 <div class="column is-half">
                     <a class="button is-large is-fullwidth" :class="{'is-success': command == 2}" >Melihat Lokasi</a>

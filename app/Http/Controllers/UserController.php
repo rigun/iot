@@ -200,7 +200,7 @@ class UserController extends Controller
             'commad' => 'required',
         ]);
         $user = User::where('token', $token)->first();
-        $user->command = $request->command;
+        $user->command = $request->commad;
         $user->save();
           
         return response()->json($user);

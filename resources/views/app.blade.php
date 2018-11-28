@@ -14,10 +14,9 @@
             <app-layout></app-layout>
         </div>
     </body>
+   
 
-
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/style.js') }}"></script>
-
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/style.js') }}"></script>
     
 </html>
