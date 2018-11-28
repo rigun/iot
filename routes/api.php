@@ -35,3 +35,6 @@ Route::get('/user/verfikasi/{token}', 'UserController@verifikasi');
 
 Route::get('/command/{token}', 'UserController@getCommand');
 Route::patch('/command/{token}', 'UserController@giveCommand');
+
+Route::get('/place/{token}', 'PlacepositionController@show');
+Route::post('/place/{token}', 'PlacepositionController@store');

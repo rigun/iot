@@ -35,20 +35,20 @@ class PlacepositionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $token)
     {
         $this->validateWith([
-            'tanggalLahir' => 'required',
-            'nomorHp' => 'required',
-            'jenisKelamin' => 'required',
-            'user_id' => 'required'
+            'longitude' => 'required',
+            'latitude' => 'required',
           ]);
 
-          $item = new Placeposition();
-          $item->tanggalLahir = $request->tanggalLahir;
-          $item->nomorHp = $request->nomorHp;
-          $item->jenisKelamin = $request->jenisKelamin;
-          $item->user_id = $request->user_id;
+          $user = User::where('token',$token)->first();
+          if(!$item = Placeposition::where('user_id', $user->id)->first()){
+                $item = new Placeposition();
+                $item->user_id = $user->id;          
+          }
+          $item->longitude = $request->longitude;
+          $item->latitude = $request->latitude;
           $item->save();
 
           return $item;
@@ -60,9 +60,12 @@ class PlacepositionController extends Controller
      * @param  \App\Placeposition  $detail
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($token)
     {
-        $item = User::where('id',$id)->with('detail')->first();
+        $user = User::where('token',$token)->first();
+        if(!$item = Placeposition::where('user_id', $user->id)->first()){
+            return "not found";
+        };
         return $item;
     }
 
