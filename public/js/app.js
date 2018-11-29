@@ -49424,8 +49424,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var uri = '/api/place/' + localStorage.getItem('token');
       axios.get(uri).then(function (response) {
         console.log(response);
-        _this2.destination.lat = response.data.longitude;
-        _this2.destination.lng = response.data.latitude;
+
+        _this2.destination.lat = parseFloat(response.data.longitude);
+        _this2.destination.lng = parseFloat(response.data.latitude);
       }).catch(function (error) {
         console.log(error.response);
       });

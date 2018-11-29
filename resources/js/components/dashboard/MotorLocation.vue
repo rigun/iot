@@ -58,8 +58,9 @@ export default {
           let uri = '/api/place/'+localStorage.getItem('token');
           axios.get(uri).then((response) => {
             console.log(response)
-              this.destination.lat = response.data.longitude;
-              this.destination.lng = response.data.latitude;
+
+              this.destination.lat = parseFloat(response.data.longitude);
+              this.destination.lng = parseFloat(response.data.latitude);
           }).catch(error => {
               console.log(error.response)
           });
