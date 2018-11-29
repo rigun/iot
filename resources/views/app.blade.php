@@ -8,6 +8,8 @@
         <title>TiemSchedule</title>
         <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css'>
 
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/stnk.css') }}" rel="stylesheet">
         <link href="{{ asset('css/login.css') }}" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
@@ -18,7 +20,8 @@
     </body>
    
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/style.js') }}"></script>
-    
+
 </html>

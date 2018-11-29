@@ -15,6 +15,7 @@ const Logout = Vue.component('logout', require('./components/LogoutComponent.vue
 
 const Landing = Vue.component('Landing', require('./components/home/Landing.vue'))
 
+const MotorStnk = Vue.component('StnkMotor', require('./components/dashboard/StnkComponent.vue'))
 const MotorCommand = Vue.component('MotorCommand', require('./components/dashboard/MotorCommand.vue'))
 const MotorLocation = Vue.component('MotorLocation', require('./components/dashboard/MotorLocation.vue'))
 const MotorStatus = Vue.component('MotorStatus', require('./components/dashboard/MotorStatus.vue'))
@@ -74,6 +75,11 @@ const routes = [
                  path: 'status',
                  component: MotorStatus
                },
+               {
+                   name:'MotorStnk',
+                   path:'stnk',
+                   component:MotorStnk
+               }
          ]
       }
 ];
@@ -91,11 +97,6 @@ router.beforeEach((to, from, next) => {
         next({ name: 'Landing' })
         return
     }
-    if(to.path === '/' && store.state.isLoggedIn) {
-        next({ name: 'DashboardComponent' })
-        return
-    }
-
     next()
 })
 export default router
