@@ -49000,7 +49000,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.interval = setInterval(function () {
                 return _this2.getCommand();
-            }, 2000);
+            }, 1000);
         }
     }
 
