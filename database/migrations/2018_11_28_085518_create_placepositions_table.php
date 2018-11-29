@@ -15,8 +15,8 @@ class CreatePlacepositionsTable extends Migration
     {
         Schema::create('placepositions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('longitude')->nullable();
-            $table->string('latitude')->nullable();
+            $table->double('longitude')->nullable();
+            $table->double('latitude')->nullable();
             $table->unsignedInteger('user_id');
             $table->timestamps();
 
