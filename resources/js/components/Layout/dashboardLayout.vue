@@ -54,7 +54,7 @@
                     </div>
                     <ul class="menu-list">
                         <li><router-link v-bind:to="{name: 'DashboardComponent'}"><i class="fa fa-home m-r-10" aria-hidden="true"></i>  <span>Motor Command</span> </router-link></li>
-                        <li><router-link v-bind:to="{ name: 'MotorStatus'}"  ><i class="fa fa-file m-r-10" aria-hidden="true"></i>  <span>Motor Stataus</span> </router-link></li>
+                        <li><router-link v-bind:to="{ name: 'MotorStatus'}"  ><i class="fa fa-file m-r-10" aria-hidden="true"></i>  <span>Motor Status</span> </router-link></li>
                         <li><router-link v-bind:to="{ name: 'MotorLocation'}"  ><i class="fa fa-file m-r-10" aria-hidden="true"></i>  <span>Motor Location</span> </router-link></li>
                     </ul>
                 </div>

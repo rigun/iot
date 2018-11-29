@@ -6,7 +6,6 @@
       :zoom="13"
       style="width:100%;  height: 400px;"
     >
-    <gmap-polyline v-if="path.length > 0" :path="path" ref="polyline"></gmap-polyline>
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -30,9 +29,9 @@ export default {
       center: { lat:-7.779047, lng: 110.416957 },
       destination: {lat:-7.795580, lng:110.369492 },
     path: [
-                    {lat: -7.779047, lng: 110.416957 },
+                    this.destination,
             
-                    {lat:-7.795580, lng:110.369492 },
+                    this.center,
         ],
       markers: [],
       places: [],
@@ -42,7 +41,7 @@ export default {
 
   mounted() {
     this.geolocate();
-    this.setPath();
+    this.getMotorLocation();
   },
 
   methods: {
@@ -56,14 +55,16 @@ export default {
         this.places.push( this.center );
       });
     },
-    setPath(){
-        let url = "https://maps.googleapis.com/maps/api/directions/json?origin="+this.center.lat+","+this.center.lng+"&destination="+this.destination.lat+","+this.destination.lng+"&key=AIzaSyC4m3960a0NxbUHCNND05Us9fwb0MSJvoI"
-        axios.get(url).then((response) => {
-            console.log(response)
-                  }).catch(error => {
-                      console.log(error.response)
-                  });
+    getMotorLocation(){
+          let uri = '/api/place/'+localStorage.getItem('token');
+          axios.get(uri).then((response) => {
+              this.destination.lat = response.data.longitude;
+              this.destination.lng = response.data.latitude;
+          }).catch(error => {
+              console.log(error.response)
+          });
     }
+  
 
   }
      

@@ -46983,7 +46983,7 @@ var render = function() {
                         attrs: { "aria-hidden": "true" }
                       }),
                       _vm._v(" "),
-                      _c("span", [_vm._v("Motor Stataus")])
+                      _c("span", [_vm._v("Motor Status")])
                     ]
                   )
                 ],
@@ -48810,7 +48810,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // change this to whatever makes sense
       center: { lat: -7.779047, lng: 110.416957 },
       destination: { lat: -7.795580, lng: 110.369492 },
-      path: [{ lat: -7.779047, lng: 110.416957 }, { lat: -7.795580, lng: 110.369492 }],
+      path: [{ lat: -7.779047, lng: 110.416957 }, this.center],
       markers: [],
       places: [],
       currentPlace: null
