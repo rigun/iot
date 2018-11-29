@@ -13,9 +13,6 @@
                     </div>
                 </div>
                 <div class="navbar-end">
-                    <!-- <div class="navbar-item notif-space">
-                        <i class="fa fa-bell"></i>
-                    </div> -->
                     <div class="navbar-item dropdown-space has-dropdown is-hoverable">
                     <div class="navbar-item"  @click="rightDropDown()">
                         <i id="logoRightNav" class="fa fa-user-circle m-l-15 size-40"></i>
@@ -54,9 +51,9 @@
                     </div>
                     <ul class="menu-list">
                         <li><router-link v-bind:to="{name: 'DashboardComponent'}"><i class="fa fa-home m-r-10" aria-hidden="true"></i>  <span>Motor Command</span> </router-link></li>
-                        <li><router-link v-bind:to="{ name: 'MotorStatus'}"  ><i class="fa fa-fogs m-r-10" aria-hidden="true"></i>  <span>Motor Status</span> </router-link></li>
-                        <li><router-link v-bind:to="{ name: 'MotorLocation'}"  ><i class="fa fa-maps m-r-10" aria-hidden="true"></i>  <span>Motor Location</span> </router-link></li>
-                        <li><router-link v-bind:to="{ name: 'MotorStnk'}"  ><i class="fa fa-off m-r-10" aria-hidden="true"></i>  <span>Motor Location</span> </router-link></li>
+                        <li><router-link v-bind:to="{ name: 'MotorStatus'}"  ><i class="fa fa-area-chart m-r-10" aria-hidden="true"></i>  <span>Motor Status</span> </router-link></li>
+                        <li><router-link v-bind:to="{ name: 'MotorLocation'}"  ><i class="fa fa-map-marker m-r-10" aria-hidden="true"></i>  <span>Motor Location</span> </router-link></li>
+                        <li><router-link v-bind:to="{ name: 'MotorStnk'}"  ><i class="fa fa-vcard-o m-r-10" aria-hidden="true"></i>  <span>Motor Location</span> </router-link></li>
                     </ul>
                 </div>
             </aside>

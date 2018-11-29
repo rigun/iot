@@ -57764,9 +57764,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -57957,7 +57954,7 @@ var render = function() {
                     { attrs: { to: { name: "MotorStatus" } } },
                     [
                       _c("i", {
-                        staticClass: "fa fa-fogs m-r-10",
+                        staticClass: "fa fa-area-chart m-r-10",
                         attrs: { "aria-hidden": "true" }
                       }),
                       _vm._v(" "),
@@ -57976,7 +57973,7 @@ var render = function() {
                     { attrs: { to: { name: "MotorLocation" } } },
                     [
                       _c("i", {
-                        staticClass: "fa fa-maps m-r-10",
+                        staticClass: "fa fa-map-marker m-r-10",
                         attrs: { "aria-hidden": "true" }
                       }),
                       _vm._v(" "),
@@ -57992,7 +57989,7 @@ var render = function() {
                 [
                   _c("router-link", { attrs: { to: { name: "MotorStnk" } } }, [
                     _c("i", {
-                      staticClass: "fa fa-off m-r-10",
+                      staticClass: "fa fa-vcard-o m-r-10",
                       attrs: { "aria-hidden": "true" }
                     }),
                     _vm._v(" "),
@@ -59656,166 +59653,172 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "facebook" }, [
-      _c("div", { staticClass: "paper" }, [
-        _c("div", { staticClass: "left" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "friend" }, [
-            _c("img", { attrs: { src: "../../images/user.png" } }),
+  return _c("div", { staticClass: "html" }, [
+    _c("div", { staticClass: "body" }, [
+      _c("div", { staticClass: "facebook" }, [
+        _c("div", { staticClass: "paper" }, [
+          _c("div", { staticClass: "left" }, [
+            _c(
+              "div",
+              { staticClass: "head" },
+              [
+                _c("router-link", {
+                  staticClass: "bgx ntf",
+                  staticStyle: { color: "white" },
+                  attrs: { to: "#" }
+                })
+              ],
+              1
+            ),
             _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c("p", [_vm._v("Agung Prio Rismawan")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "friend" }, [
-            _c("img", { attrs: { src: "../../images/ID.png" } }),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _c("p", [_vm._v("160709001")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "friend" }, [
-            _c("img", { attrs: { src: "../../images/Nomor.png" } }),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _c("p", [_vm._v("160709001")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "friend" }, [
-            _c("img", { attrs: { src: "../../images/Masa Berlaku.png" } }),
-            _vm._v(" "),
-            _vm._m(4),
-            _vm._v(" "),
-            _c("p", [_vm._v("20 Septermber 2019")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "friend" }, [
-            _c("img", { attrs: { src: "../../images/Harga.png" } }),
-            _vm._v(" "),
-            _vm._m(5),
-            _vm._v(" "),
-            _c("p", [_vm._v("Rp. 163.000")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right" }, [
-          _c("div", { staticClass: "details" }, [
-            _c("div", { staticClass: "pp" }),
-            _vm._v(" "),
-            _c("h1", [_vm._v("Agung Prio Rismawan")]),
-            _vm._v(" "),
-            _vm._m(6),
-            _vm._v(" "),
-            _c("div", { staticStyle: { clear: "both" } }),
-            _vm._v(" "),
-            _c("div", { staticClass: "graph maps" }),
-            _vm._v(" "),
-            _c("div", { staticStyle: { clear: "both" } }),
-            _vm._v(" "),
-            _c("div", { staticClass: "post" }, [
-              _c("img", { attrs: { src: "../../images/telat.png" } }),
-              _vm._v(" "),
-              _vm._m(7),
-              _vm._v(" "),
-              _c("p", [_vm._v("12 Hari")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "spacer" }, [_vm._v("Rp. 120.000")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "comments" }, [
-                _c("img", { attrs: { src: "../../images/Total.png" } }),
+            _c(
+              "div",
+              { staticClass: "friend" },
+              [
+                _c("img", { attrs: { src: "../../images/user.png" } }),
                 _vm._v(" "),
-                _vm._m(8),
+                _c("router-link", { attrs: { to: "#" } }, [
+                  _vm._v("Nama Pemilik")
+                ]),
                 _vm._v(" "),
-                _c("p", [_vm._v("Rp.283.000")])
-              ])
-            ]),
+                _c("p", [_vm._v("Agung Prio Rismawan")])
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("div")
-          ])
+            _c(
+              "div",
+              { staticClass: "friend" },
+              [
+                _c("img", { attrs: { src: "../../images/ID.png" } }),
+                _vm._v(" "),
+                _c("router-link", { staticClass: "a", attrs: { to: "#" } }, [
+                  _vm._v("Nomor KTP")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("160709001")])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "friend" },
+              [
+                _c("img", { attrs: { src: "../../images/Nomor.png" } }),
+                _vm._v(" "),
+                _c("router-link", { staticClass: "a", attrs: { to: "#" } }, [
+                  _vm._v("Nomor STNK")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("160709001")])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "friend" },
+              [
+                _c("img", { attrs: { src: "../../images/Masa Berlaku.png" } }),
+                _vm._v(" "),
+                _c("router-link", { staticClass: "a", attrs: { to: "#" } }, [
+                  _vm._v("Masa Berlaku")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("20 Septermber 2019")])
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "right" },
+            [
+              _c("div", { staticClass: "details" }, [
+                _c("div", { staticClass: "pp" }, [
+                  _c("img", { attrs: { src: "../../images/io.jpg" } })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "friend" },
+                [
+                  _c(
+                    "center",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticStyle: { align: "center" },
+                          attrs: { to: "#" }
+                        },
+                        [_vm._v("Rio Gunawan")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "Bukan programmer profesional tapi masih jauh dari kata newbie 😎😎😎😎"
+                        )
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "friend" },
+                [
+                  _c("img", { attrs: { src: "../../images/telat.png" } }),
+                  _vm._v(" "),
+                  _c("router-link", { staticClass: "a", attrs: { to: "#" } }, [
+                    _vm._v("Keterlambatan")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("12 Hari")])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "friend" },
+                [
+                  _c("img", { attrs: { src: "../../images/Total.png" } }),
+                  _vm._v(" "),
+                  _c("router-link", { staticClass: "a", attrs: { to: "#" } }, [
+                    _vm._v("Total Bayar")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Rp. 260.000")])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "friend" }),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-primary active btn-block btn-sm",
+                  attrs: { tag: "button", to: "#" }
+                },
+                [_vm._v("Bayar Sekarang")]
+              )
+            ],
+            1
+          )
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "head" }, [
-      _c("a", {
-        staticClass: "bgx ntf",
-        staticStyle: { color: "white" },
-        attrs: { href: "#" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Nama Pemilik")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [_c("a", { attrs: { href: "#" } }, [_vm._v("Nomor KTP")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [_c("a", { attrs: { href: "#" } }, [_vm._v("Nomor STNK")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Masa Berlaku")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Jumlah Bayar")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v("member Sejak 12 Januari 2018\n            "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Jatah Stnk Habis")]),
-      _vm._v("20 September 2019\n          ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [_c("a", { attrs: { href: "#" } }, [_vm._v("Denda")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Jumlah Bayar + Denda")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
