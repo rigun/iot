@@ -29,7 +29,6 @@ export default {
             {
                  let uri = '/api/command/'+localStorage.getItem('token');
                 axios.patch(uri, {commad: x}).then((response) => {
-                    this.command = response.data;
                 }).catch(error => {
                     console.log(error.response)
                 });

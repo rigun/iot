@@ -48599,12 +48599,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         command2: function command2(x) {
-            var _this = this;
-
             var uri = '/api/command/' + localStorage.getItem('token');
-            axios.patch(uri, { commad: x }).then(function (response) {
-                _this.command = response.data;
-            }).catch(function (error) {
+            axios.patch(uri, { commad: x }).then(function (response) {}).catch(function (error) {
                 console.log(error.response);
             });
         }
@@ -49006,7 +49002,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.interval = setInterval(function () {
                 return _this2.getCommand();
-            }, 1000);
+            }, 2000);
         }
     }
 
