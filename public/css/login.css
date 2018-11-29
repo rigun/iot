@@ -1,0 +1,113 @@
+#Utama {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #F7F7F7;
+  }
+  #Utama .Kotak {
+    background: #fff;
+    width: 24rem;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
+  }
+  #Utama .Kotak .Atas {
+    background-color: #00b89c;
+    padding: 2rem;
+    text-align: center;
+  }
+  #Utama .Kotak .card-title h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  #Utama .Kotak .content {
+    padding: 3rem 2.5rem 5rem;
+  }
+  #Utama .Kotak #Email, #Utama .Kotak #password {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    padding: 0.25rem 0;
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+    transition: all .5s;
+  }
+  #Utama .Kotak #Email:hover, #Utama .Kotak #password:hover {
+    border-color: #7a7a7a;
+  }
+  #Utama .Kotak #Email:active, #Utama .Kotak #Email:focus, #Utama .Kotak #password:active, #Utama .Kotak #password:focus {
+    border-color: #2F6977;
+  }
+  #Utama .Kotak .checkbox {
+    color: #b5b5b5;
+    font-size: 0.8rem;
+  }
+  #Utama .Kotak .checkbox span {
+    margin-left: 0.5rem;
+  }
+  #Utama .Kotak a {
+    font-size: 0.8rem;
+  }
+  #Utama .Kotak .options {
+    color: #b5b5b5;
+    margin-bottom: 1.5rem;
+  }
+  #Utama .Kotak button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #2F6977;
+    border-radius: 4rem;
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 2px solid #2F6977;
+    padding: 0.9rem 0 1.1rem;
+    transition: color .5s, border-color .5s;
+  }
+  #Utama .Kotak button:hover, #Utama .Kotak button:focus {
+    color: #2F6977;
+    border-color: #2F6977;
+  }
+  #Utama .Kotak button:active {
+    transform: translateY(1px);
+  }
+  
+  label {
+    cursor: pointer;
+  }
+  
+  .checkbox-biasa {
+    display: none;
+  }
+  
+  .checkbox-biasa + label {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 7px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .checkbox-biasa:checked + label {
+    background-color: #e9ecee;
+  }
+  
+  .checkbox-biasa:checked + label:after {
+    content: '\2714';
+    font-size: 11px;
+    position: absolute;
+    top: 0;
+    left: 3px;
+    color: #b5b5b5;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+  

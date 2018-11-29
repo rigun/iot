@@ -86,7 +86,7 @@ router.beforeEach((to, from, next) => {
         return
     }
     if(to.path === '/' && store.state.isLoggedIn) {
-        next({ name: 'DashboardContent' })
+        next({ name: 'DashboardComponent' })
         return
     }
 

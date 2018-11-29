@@ -5,8 +5,8 @@
       :center="center"
       :zoom="13"
       style="width:100%;  height: 400px;"
-    ><gmap-polyline v-bind:path.sync="path" v-bind:options="{ strokeColor:'#008000'}">
-         </gmap-polyline>
+    >
+    <gmap-polyline v-if="path.length > 0" :path="path" ref="polyline"></gmap-polyline>
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -37,23 +37,12 @@ export default {
       markers: [],
       places: [],
       currentPlace: null,
-       polylineGeojson: '',
-        mvcPath: null,
     };
   },
-watch: {
-          polylinePath: _.throttle(function (path) {
-            if (path) {
-              this.path = path
-              this.polylineGeojson = JSON.stringify({
-                type: 'Polyline',
-                coordinates: this.path.map(({lat, lng}) => [lng, lat])
-              }, null, 2)
-            }
-          }, 1000)
-},
+
   mounted() {
     this.geolocate();
+    this.setPath();
   },
 
   methods: {
@@ -67,6 +56,15 @@ watch: {
         this.places.push( this.center );
       });
     },
+    setPath(){
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin="+this.center.lat+","+this.center.lng+"&destination="+this.destination.lat+","+this.destination.lng+"&key=AIzaSyC4m3960a0NxbUHCNND05Us9fwb0MSJvoI"
+        axios.get(url).then((response) => {
+            console.log(response)
+                  }).catch(error => {
+                      console.log(error.response)
+                  });
+    }
+
   }
      
 };

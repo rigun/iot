@@ -45668,7 +45668,7 @@ router.beforeEach(function (to, from, next) {
         return;
     }
     if (to.path === '/' && __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].state.isLoggedIn) {
-        next({ name: 'DashboardContent' });
+        next({ name: 'DashboardComponent' });
         return;
     }
 
@@ -46802,13 +46802,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             dataPassword: {
                 password_baru: '',
                 password_konfirmasi: ''
-            }
+            },
+            show: false
         };
     },
     created: function created() {},
     mounted: function mounted() {},
 
-    methods: {}
+    methods: {
+        rightDropDown: function rightDropDown() {
+            if (this.show) {
+                this.show = false;
+            } else {
+                this.show = true;
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -46839,7 +46848,23 @@ var render = function() {
                     "navbar-item dropdown-space has-dropdown is-hoverable"
                 },
                 [
-                  _vm._m(1),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "navbar-item",
+                      on: {
+                        click: function($event) {
+                          _vm.rightDropDown()
+                        }
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-user-circle m-l-15 size-40",
+                        attrs: { id: "logoRightNav" }
+                      })
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "navbar-dropdown arrow-up" }),
                   _vm._v(" "),
@@ -46847,7 +46872,8 @@ var render = function() {
                     "ul",
                     {
                       staticClass:
-                        "navbar-dropdown is-boxed  is-right box-dropdown-custom",
+                        "navbar-dropdown is-boxed is-right box-dropdown-custom",
+                      class: { "box-dropdown-custom-change": _vm.show },
                       attrs: { id: "navbarRight" }
                     },
                     [
@@ -46907,7 +46933,9 @@ var render = function() {
                         attrs: { src: "/images/logo.png", height: "40" }
                       }),
                       _vm._v(" "),
-                      _c("p", { staticClass: "amihealthy" }, [_vm._v("Tiem")])
+                      _c("p", { staticClass: "amihealthy" }, [
+                        _vm._v("Motor ID")
+                      ])
                     ]
                   )
                 ],
@@ -47009,7 +47037,7 @@ var render = function() {
               _c("div", { staticClass: "modal-background" }),
               _vm._v(" "),
               _c("div", { staticClass: "modal-card" }, [
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "form",
@@ -47170,17 +47198,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-item" }, [
-      _c("i", {
-        staticClass: "fa fa-user-circle m-l-15 size-40",
-        attrs: { id: "logoRightNav", onclick: "rightDropDown()" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("header", { staticClass: "modal-card-head" }, [
       _c(
         "p",
@@ -47294,7 +47311,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47353,33 +47370,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47407,108 +47397,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content", attrs: { id: "homeLayout" } }, [
+  return _c("div", { attrs: { id: "appPage" } }, [
     _c(
-      "nav",
-      {
-        staticClass: "navbar",
-        attrs: { role: "navigation", "aria-label": "main navigation" }
-      },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "navbar-brand" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "navbar-item",
-                  staticStyle: { color: "white" },
-                  attrs: { to: { name: "Landing" } }
-                },
-                [
-                  _c("img", {
-                    staticStyle: { "margin-right": "20px" },
-                    attrs: { src: "/images/logo.png", height: "40" }
-                  }),
-                  _vm._v(
-                    "\n                Selamat Datang di website TiemSchedule IOS\n                "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm._m(0)
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", {
-            staticClass: "navbar-menu",
-            attrs: { id: "navbarBasicExample" }
-          })
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "m-t-65" }),
-    _vm._v(" "),
-    _c("div", { attrs: { id: "appPage" } }, [
-      _c(
-        "main",
-        { staticClass: "pageContent" },
-        [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "m-b-30" }),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "footer",
-        staticStyle: {
-          position: "absolute",
-          bottom: "0px",
-          left: "0px",
-          right: "0px"
-        }
-      },
-      [
-        _c("p", { staticStyle: { "text-align": "center" } }, [
-          _vm._v("Copyright © " + _vm._s(_vm.year) + " TiemSchedule")
-        ])
-      ]
+      "main",
+      { staticClass: "pageContent" },
+      [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
+      1
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "navbar-burger burger",
-        attrs: {
-          role: "button",
-          "aria-label": "menu",
-          "aria-expanded": "false",
-          "data-target": "navbarBasicExample"
-        }
-      },
-      [
-        _c("span", { attrs: { "aria-hidden": "true" } }),
-        _vm._v(" "),
-        _c("span", { attrs: { "aria-hidden": "true" } }),
-        _vm._v(" "),
-        _c("span", { attrs: { "aria-hidden": "true" } })
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -48403,7 +48301,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48415,32 +48313,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store__ = __webpack_require__(4);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -48493,7 +48365,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].commit('loginUser');
                     localStorage.setItem('token', response.data.access_token);
                     localStorage.setItem('roles', response.data.role);
-                    _this.$router.push({ name: 'DashboardContent' });
+                    _this.$router.push({ name: 'DashboardComponent' });
                     _this.load = false;
                 } else {
                     _this.load = false;
@@ -48528,177 +48400,98 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content", attrs: { id: "landingComponent" } },
-    [
-      _c(
-        "div",
-        { staticClass: "container", staticStyle: { "margin-top": "130px" } },
-        [
-          _c("div", { staticClass: "columns" }, [
-            _c("div", { staticClass: "column is-half is-offset-one-quarter" }, [
-              _c("div", { staticClass: "box" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "box-login",
-                    staticStyle: { "min-height": "300px" }
-                  },
-                  [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "login-body" }, [
-                      _c(
-                        "form",
-                        {
-                          attrs: { autocomplete: "off" },
-                          on: {
-                            submit: function($event) {
-                              $event.preventDefault()
-                              _vm.loadUpdate()
-                              _vm.submitLogin()
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "field" }, [
-                            _c("label", { staticClass: "label" }, [
-                              _vm._v("Email")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "control has-icons-left has-icons-right"
-                              },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.email,
-                                      expression: "email"
-                                    }
-                                  ],
-                                  staticClass: "input ",
-                                  attrs: {
-                                    type: "email",
-                                    name: "email",
-                                    required: ""
-                                  },
-                                  domProps: { value: _vm.email },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.email = $event.target.value
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _vm._m(1)
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "field" }, [
-                            _c("label", { staticClass: "label" }, [
-                              _vm._v("Password")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "control has-icons-left has-icons-right"
-                              },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.password,
-                                      expression: "password"
-                                    }
-                                  ],
-                                  staticClass: "form-control input ",
-                                  attrs: {
-                                    id: "password",
-                                    type: "password",
-                                    name: "password",
-                                    required: ""
-                                  },
-                                  domProps: { value: _vm.password },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.password = $event.target.value
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _vm._m(2)
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "control" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "button is-success m-t-35 is-fullwidth",
-                                class: { "is-loading": _vm.load }
-                              },
-                              [_vm._v("Masuk")]
-                            )
-                          ])
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ]
-  )
+  return _c("div", { attrs: { id: "Utama" } }, [
+    _c("div", { staticClass: "Kotak" }, [
+      _c("figure", { staticClass: "Atas" }, [
+        _c("img", { attrs: { src: "./images/logo.png", alt: "logo" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
+        _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                _vm.loadUpdate()
+                _vm.submitLogin()
+              }
+            }
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.email,
+                  expression: "email"
+                }
+              ],
+              attrs: {
+                id: "Email",
+                type: "email",
+                name: "Email",
+                title: "Email",
+                placeholder: "Email Anda",
+                required: "",
+                autofocus: ""
+              },
+              domProps: { value: _vm.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.email = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.password,
+                  expression: "password"
+                }
+              ],
+              attrs: {
+                id: "password",
+                type: "password",
+                name: "password",
+                title: "password",
+                placeholder: "Password",
+                required: ""
+              },
+              domProps: { value: _vm.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.password = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                class: { "is-loading": _vm.load },
+                attrs: { type: "submit" }
+              },
+              [_vm._v("Login")]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "login-header" }, [
-      _c("h1", [_vm._v("Masuk")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon is-small is-left" }, [
-      _c("i", { staticClass: "fa fa-user" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon is-small is-left" }, [
-      _c("i", { staticClass: "fa fa-lock" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -48796,10 +48589,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     methods: {
@@ -48825,41 +48614,51 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "command" }, [
-    _c("div", { staticClass: "box" }, [
-      _c("div", { staticClass: "columns" }, [
-        _c("div", { staticClass: "column is-half" }, [
+  return _c("div", { staticClass: "command", attrs: { id: "command" } }, [
+    _c("nav", [
+      _c("ul", { staticClass: "nav" }, [
+        _c("li", [
           _c(
             "a",
             {
-              staticClass: "button is-large is-fullwidth",
-              on: {
-                click: function($event) {
-                  _vm.command(1)
-                }
-              }
-            },
-            [_vm._v("Nyalakan")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "column is-half" }, [
-          _c(
-            "a",
-            {
-              staticClass: "button is-large is-fullwidth",
               on: {
                 click: function($event) {
                   _vm.command(2)
                 }
               }
             },
-            [_vm._v("Melihat Lokasi")]
+            [
+              _c("i", {
+                staticClass: "icon-search",
+                staticStyle: { color: "#E0353D" }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.command(1)
+                }
+              }
+            },
+            [
+              _c("i", {
+                staticClass: "icon-off",
+                staticStyle: { color: "#E0353D" }
+              })
+            ]
           )
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1)
     ])
   ])
 }
@@ -48868,16 +48667,46 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "columns" }, [
-      _c("div", { staticClass: "column is-half" }, [
-        _c("a", { staticClass: "button is-large is-fullwidth" }, [
-          _vm._v("Kondisi Motor")
+    return _c("ul", { staticClass: "nav" }, [
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", {
+            staticClass: "icon-phone",
+            staticStyle: { color: "#50A11E" }
+          })
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "column is-half" }, [
-        _c("a", { staticClass: "button is-large is-fullwidth" }, [
-          _vm._v("Service Terdekat")
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", {
+            staticClass: "icon-wrench",
+            staticStyle: { color: "#17619D" }
+          })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "nav" }, [
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", {
+            staticClass: "icon-copy",
+            staticStyle: { color: "#174A57" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", {
+            staticClass: "icon-cogs",
+            staticStyle: { color: "#F8B50E" }
+          })
         ])
       ])
     ])
@@ -48981,29 +48810,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       path: [{ lat: -7.779047, lng: 110.416957 }, { lat: -7.795580, lng: 110.369492 }],
       markers: [],
       places: [],
-      currentPlace: null,
-      polylineGeojson: '',
-      mvcPath: null
+      currentPlace: null
     };
-  },
-
-  watch: {
-    polylinePath: __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.throttle(function (path) {
-      if (path) {
-        this.path = path;
-        this.polylineGeojson = JSON.stringify({
-          type: 'Polyline',
-          coordinates: this.path.map(function (_ref) {
-            var lat = _ref.lat,
-                lng = _ref.lng;
-            return [lng, lat];
-          })
-        }, null, 2);
-      }
-    }, 1000)
   },
   mounted: function mounted() {
     this.geolocate();
+    this.setPath();
   },
 
 
@@ -49018,6 +48830,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
         _this.markers.push({ position: _this.center }, { position: _this.destination });
         _this.places.push(_this.center);
+      });
+    },
+    setPath: function setPath() {
+      var url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + this.center.lat + "," + this.center.lng + "&destination=" + this.destination.lat + "," + this.destination.lng + "&key=AIzaSyC4m3960a0NxbUHCNND05Us9fwb0MSJvoI";
+      axios.get(url).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error.response);
       });
     }
   }
@@ -49044,14 +48864,12 @@ var render = function() {
           attrs: { center: _vm.center, zoom: 13 }
         },
         [
-          _c("gmap-polyline", {
-            attrs: { path: _vm.path, options: { strokeColor: "#008000" } },
-            on: {
-              "update:path": function($event) {
-                _vm.path = $event
-              }
-            }
-          }),
+          _vm.path.length > 0
+            ? _c("gmap-polyline", {
+                ref: "polyline",
+                attrs: { path: _vm.path }
+              })
+            : _vm._e(),
           _vm._v(" "),
           _vm._l(_vm.markers, function(m, index) {
             return _c("gmap-marker", {
@@ -49157,15 +48975,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     created: function created() {
+        var _this = this;
+
         this.getCommand();
+        this.interval = setInterval(function () {
+            return _this.getCommand();
+        }, 1000);
     },
     methods: {
         getCommand: function getCommand() {
-            var _this = this;
+            var _this2 = this;
 
             var uri = '/api/command/' + localStorage.getItem('token');
             axios.get(uri).then(function (response) {
-                _this.command = response.data;
+                _this2.command = response.data;
             }).catch(function (error) {
                 console.log(error.response);
             });

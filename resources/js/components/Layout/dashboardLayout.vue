@@ -17,11 +17,11 @@
                         <i class="fa fa-bell"></i>
                     </div> -->
                     <div class="navbar-item dropdown-space has-dropdown is-hoverable">
-                    <div class="navbar-item">
-                        <i id="logoRightNav" class="fa fa-user-circle m-l-15 size-40" onclick="rightDropDown()"></i>
+                    <div class="navbar-item"  @click="rightDropDown()">
+                        <i id="logoRightNav" class="fa fa-user-circle m-l-15 size-40"></i>
                     </div>
                     <div class="navbar-dropdown arrow-up"></div>
-                        <ul id="navbarRight" class="navbar-dropdown is-boxed  is-right box-dropdown-custom">
+                        <ul id="navbarRight" class="navbar-dropdown is-boxed is-right box-dropdown-custom" :class="{'box-dropdown-custom-change': show}">
                             <hr class="navbar-divider">
                             <li>  <router-link v-bind:to="{name: 'Logout'}" class="navbar-item">
                                         <span class="icon">
@@ -42,7 +42,7 @@
                     <div class="menu-label imgLabel">
                        <router-link :to="{name: 'Landing'}" style="color: white">
                         <img src="/images/logo.png" height="40" style="margin-right: 20px; width: auto;">
-                        <p class="amihealthy">Tiem</p>
+                        <p class="amihealthy">Motor ID</p>
                         </router-link>
                     </div>
                 </div>
@@ -126,7 +126,8 @@
                 dataPassword: {
                     password_baru: '',
                     password_konfirmasi: '',
-                }
+                },
+                show: false   
             }
         },
         created(){
@@ -134,6 +135,13 @@
         mounted(){
         },
         methods:{
+          rightDropDown(){
+              if(this.show){
+                  this.show = false
+              }else{
+                  this.show = true
+              }
+          }
         }
     }
 </script>

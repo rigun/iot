@@ -1,48 +1,22 @@
 <template>
-   <div class="content" id="landingComponent">
-       <div class="container" style="margin-top: 130px">
-           <div class="columns">
-               <div class="column is-half is-offset-one-quarter">
-                   <div class="box" >
-                           <div class="box-login" style="min-height: 300px">
-
-                            <div class="login-header">
-                                <h1>Masuk</h1>
-                            </div>
-                            <div class="login-body">
-                                <form autocomplete="off" v-on:submit.prevent="loadUpdate();submitLogin()"  >
-                                <div class="field">
-                                        <label class="label">Email</label>
-                                        <div class="control has-icons-left has-icons-right">
-                                            <input class="input " type="email" name="email"  v-model="email" required >
-                                            <span class="icon is-small is-left">
-                                            <i class="fa fa-user"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label class="label">Password</label>
-                                        <div class="control has-icons-left has-icons-right">
-                                            <input id="password" type="password" class="form-control input " name="password" v-model="password" required>
-                                            <span class="icon is-small is-left">
-                                            <i class="fa fa-lock"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="control">
-                                        <button class="button is-success m-t-35 is-fullwidth" :class="{'is-loading' : load}">Masuk</button>
-                                    </div>
-                                   
-                                </form>
-                                    
-                            </div>
-                        </div>
-
-                   </div>
-                </div>      
-           </div>
-       </div>
-   </div>
+<div id="Utama">
+    <div class="Kotak">
+  
+      <figure class="Atas">
+        <img :src="'./images/logo.png'" alt="logo">
+      </figure>
+  
+      <div class="content">
+        <form v-on:submit.prevent="loadUpdate();submitLogin()" >
+  
+          <input id="Email" type="email" name="Email" title="Email" placeholder="Email Anda"  v-model="email" required  autofocus>
+          <input id="password" type="password" name="password" title="password" placeholder="Password"  v-model="password"  required>
+  
+          <button type="submit" class="btn btn-primary"  :class="{'is-loading' : load}">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </template>
 <style>
 
@@ -73,7 +47,7 @@
                         store.commit('loginUser')
                         localStorage.setItem('token', response.data.access_token)
                         localStorage.setItem('roles', response.data.role)
-                        this.$router.push({ name: 'DashboardContent' })
+                        this.$router.push({ name: 'DashboardComponent' })
                         this.load = false;
                     }else{
                         this.load = false;

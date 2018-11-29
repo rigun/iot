@@ -21,6 +21,7 @@ export default {
         },
         created: function() {
             this.getCommand();
+             this.interval = setInterval(() => this.getCommand(), 1000);
         },
          methods: {
             getCommand(){
@@ -31,7 +32,9 @@ export default {
                       console.log(error.response)
                   });
             },
-         },
+        
+         }
+   
    
         
 }
