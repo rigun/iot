@@ -48591,6 +48591,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            command: ''
+        };
+    },
+
     methods: {
         command2: function command2(x) {
             var _this = this;

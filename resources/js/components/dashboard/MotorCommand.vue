@@ -18,6 +18,11 @@
 </template>
 <script>
 export default {
+    data(){
+        return{
+            command: '',
+        }
+    },
         methods: {
       
         command2(x)
