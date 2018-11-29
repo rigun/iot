@@ -30,7 +30,6 @@ export default {
       destination: {lat:-7.795580, lng:110.369492 },
     path: [
                     this.destination,
-            
                     this.center,
         ],
       markers: [],
@@ -58,6 +57,7 @@ export default {
     getMotorLocation(){
           let uri = '/api/place/'+localStorage.getItem('token');
           axios.get(uri).then((response) => {
+            console.log(response)
               this.destination.lat = response.data.longitude;
               this.destination.lng = response.data.latitude;
           }).catch(error => {
