@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {return view('app');});
+Route::get('/tes', function () {return view('app');});
 Route::get('/dashboard', function () {return view('app');});
 Route::get('/dashboard/status', function () {return view('app');});
 Route::get('/dashboard/location', function () {return view('app');});

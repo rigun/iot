@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 
 const DashboardLayout = Vue.component('dashboard-layout', require('./components/Layout/dashboardLayout.vue'))
 const HomeLayout = Vue.component('home-layout', require('./components/Layout/homeLayout.vue'))
+const tes = Vue.component('tes', require('./components/home/try.vue'))
 const LoginLayout = Vue.component('login-layout', require('./components/Layout/loginLayout.vue'))
 const SuksesLayout = Vue.component('SuksesLayout', require('./components/Layout/suksesLayout.vue'))
 const VerifikasiLayout = Vue.component('VerifikasiLayout', require('./components/Layout/VerifikasiLayout.vue'))
@@ -44,6 +45,11 @@ const routes = [
                 name: 'Landing',
                 path: '/',
                 component: Landing    
+            },
+            {
+                name: 'tes',
+                path: '/tes',
+                component: tes    
             },
         ]
       },

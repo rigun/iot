@@ -46200,6 +46200,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var DashboardLayout = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard-layout', __webpack_require__(52));
 var HomeLayout = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home-layout', __webpack_require__(55));
+var tes = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('tes', __webpack_require__(130));
 var LoginLayout = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login-layout', __webpack_require__(61));
 var SuksesLayout = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('SuksesLayout', __webpack_require__(64));
 var VerifikasiLayout = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('VerifikasiLayout', __webpack_require__(67));
@@ -46232,6 +46233,10 @@ var routes = [{
         name: 'Landing',
         path: '/',
         component: Landing
+    }, {
+        name: 'tes',
+        path: '/tes',
+        component: tes
     }]
 }, {
     // name: 'DashboardLayout',
@@ -51702,6 +51707,122 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(131)
+/* template */
+var __vue_template__ = __webpack_require__(132)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/home/try.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-16011056", Component.options)
+  } else {
+    hotAPI.reload("data-v-16011056", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      center: { lat: 0, lng: 0 }
+    };
+  },
+  mounted: function mounted() {
+    this.geolocate();
+  },
+
+
+  methods: {
+    geolocate: function geolocate() {
+      var _this = this;
+
+      navigator.geolocation.getCurrentPosition(function (position) {
+        _this.center = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        _this.markers.push({ position: _this.center }, { position: _this.destination });
+        _this.places.push(_this.center);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("\n  " + _vm._s(_vm.center) + "\n")])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-16011056", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
