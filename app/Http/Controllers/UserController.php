@@ -191,7 +191,7 @@ class UserController extends Controller
 
     public function getCommand($token){
         $user = User::where('token', $token)->first();
-       return response()->json(["response" => "success", "Data" => $user->command]);
+        return $user->command;
     }
     
     public function giveCommand(Request $request, $token)
