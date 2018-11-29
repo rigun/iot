@@ -17,11 +17,15 @@ export default {
         data(){
             return{
                 command: 0,
+                interval: null,
             }
         },
         created: function() {
             this.getCommand();
-             this.interval = setInterval(() => this.getCommand(), 1000);
+            this.setRealtime();
+        },
+        destroyed(){
+            clearInterval(this.interval);
         },
          methods: {
             getCommand(){
@@ -32,7 +36,9 @@ export default {
                       console.log(error.response)
                   });
             },
-        
+            setRealtime(){
+             this.interval = setInterval(() => this.getCommand(), 5000);
+            }
          }
    
    

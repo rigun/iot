@@ -48970,28 +48970,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            command: 0
+            command: 0,
+            interval: null
         };
     },
 
     created: function created() {
-        var _this = this;
-
         this.getCommand();
-        this.interval = setInterval(function () {
-            return _this.getCommand();
-        }, 1000);
+        this.setRealtime();
     },
+    destroyed: function destroyed() {
+        clearInterval(this.interval);
+    },
+
     methods: {
         getCommand: function getCommand() {
-            var _this2 = this;
+            var _this = this;
 
             var uri = '/api/command/' + localStorage.getItem('token');
             axios.get(uri).then(function (response) {
-                _this2.command = response.data;
+                _this.command = response.data;
             }).catch(function (error) {
                 console.log(error.response);
             });
+        },
+        setRealtime: function setRealtime() {
+            var _this2 = this;
+
+            this.interval = setInterval(function () {
+                return _this2.getCommand();
+            }, 5000);
         }
     }
 
