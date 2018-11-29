@@ -48592,7 +48592,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     methods: {
-        command: function command(x) {
+        command2: function command2(x) {
             var _this = this;
 
             var uri = '/api/command/' + localStorage.getItem('token');
@@ -48603,7 +48603,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-
 });
 
 /***/ }),
@@ -48623,7 +48622,8 @@ var render = function() {
             {
               on: {
                 click: function($event) {
-                  _vm.command(2)
+                  $event.preventDefault()
+                  _vm.command2(2)
                 }
               }
             },
@@ -48642,7 +48642,8 @@ var render = function() {
             {
               on: {
                 click: function($event) {
-                  _vm.command(1)
+                  $event.preventDefault()
+                  _vm.command2(1)
                 }
               }
             },

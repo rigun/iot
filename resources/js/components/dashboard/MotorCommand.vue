@@ -2,8 +2,8 @@
 <div id="command" class="command">
 <nav>
     <ul class="nav">
-      <li><a @click="command(2)"><i class="icon-search" style="color:#E0353D"></i></a></li>
-      <li><a @click="command(1)"><i class="icon-off" style="color:#E0353D"></i></a></li>      
+      <li><a @click.prevent="command2(2)"><i class="icon-search" style="color:#E0353D"></i></a></li>
+      <li><a @click.prevent="command2(1)"><i class="icon-off" style="color:#E0353D"></i></a></li>      
     </ul>
     <ul class="nav">
       <li><a href="#"><i class="icon-phone" style="color:#50A11E"></i></a></li>
@@ -18,17 +18,17 @@
 </template>
 <script>
 export default {
-         methods: {
-            command(x){
-                  let uri = '/api/command/'+localStorage.getItem('token');
-                  axios.patch(uri, {commad: x}).then((response) => {
-                      this.command = response.data;
-                  }).catch(error => {
-                      console.log(error.response)
-                  });
-            },
-         },
-   
-        
+        methods: {
+      
+        command2(x)
+            {
+                 let uri = '/api/command/'+localStorage.getItem('token');
+                axios.patch(uri, {commad: x}).then((response) => {
+                    this.command = response.data;
+                }).catch(error => {
+                    console.log(error.response)
+                });
+            }   
+        },
 }
 </script>
