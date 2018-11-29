@@ -37,7 +37,7 @@ export default {
                   });
             },
             setRealtime(){
-             this.interval = setInterval(() => this.getCommand(), 5000);
+             this.interval = setInterval(() => this.getCommand(), 2000);
             }
          }
    
