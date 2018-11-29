@@ -38,3 +38,6 @@ Route::patch('/command/{token}', 'UserController@giveCommand');
 
 Route::get('/place/{token}', 'PlacepositionController@show');
 Route::post('/place/{token}', 'PlacepositionController@store');
+
+Route::get('/place/arduino/{token}/{lat}/{lng}', 'PlacepositionController@storeFromArduino');
+Route::get('/command/arduino/{token}/{command}', 'UserController@setCommandFromArduino');

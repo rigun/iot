@@ -53,6 +53,19 @@ class PlacepositionController extends Controller
 
           return $item;
     }
+    public function storeFromArduino($token,$lat,$lng)
+    {
+          $user = User::where('token',$token)->first();
+          if(!$item = Placeposition::where('user_id', $user->id)->first()){
+                $item = new Placeposition();
+                $item->user_id = $user->id;          
+          }
+          $item->longitude = $lat;
+          $item->latitude = $lng;
+          $item->save();
+
+          return $item;
+    }
 
     /**
      * Display the specified resource.
