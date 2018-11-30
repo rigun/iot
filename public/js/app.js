@@ -59442,13 +59442,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             email: '',
             password: '',
             loginError: false,
-            load: false
+            load: false,
+            Login: 'Login'
         };
     },
 
     methods: {
         loadUpdate: function loadUpdate() {
-            this.load = true;
+            this.Login = "Memuat . . ";
+            this.$toast.open({
+                duration: 2000,
+                message: 'Login . . .',
+                position: 'is-bottom',
+                type: 'is-success',
+                queue: false
+            });
         },
         submitLogin: function submitLogin() {
             var _this = this;
@@ -59458,27 +59466,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 email: this.email,
                 password: this.password
             }).then(function (response) {
-                if (response.data.role == 'administrator') {
-                    __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].commit('loginUser');
-                    localStorage.setItem('token', response.data.access_token);
-                    localStorage.setItem('roles', response.data.role);
-                    _this.$router.push({ name: 'DashboardComponent' });
-                    _this.load = false;
-                } else {
-                    _this.load = false;
-                    _this.$toast.open({
-                        duration: 500,
-                        message: 'Mohon maaf halaman ini khusus untuk admin',
-                        position: 'is-bottom',
-                        type: 'is-danger',
-                        queue: false
-                    });
-                }
+
+                __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].commit('loginUser');
+                localStorage.setItem('token', response.data.access_token);
+                localStorage.setItem('roles', response.data.role);
+                _this.$router.push({ name: 'DashboardComponent' });
+                _this.load = false;
             }).catch(function (error) {
                 _this.loginError = true;
+                _this.Login = "Login";
                 _this.load = false;
                 _this.$toast.open({
-                    duration: 500,
+                    duration: 2000,
                     message: 'Email atau Password salah',
                     position: 'is-bottom',
                     type: 'is-danger',
@@ -59575,12 +59574,8 @@ var render = function() {
             _vm._v(" "),
             _c(
               "button",
-              {
-                staticClass: "btn btn-primary",
-                class: { "is-loading": _vm.load },
-                attrs: { type: "submit" }
-              },
-              [_vm._v("Login")]
+              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+              [_vm._v(_vm._s(_vm.Login))]
             )
           ]
         )
