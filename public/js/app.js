@@ -59693,10 +59693,10 @@ var render = function() {
                 _c("img", { attrs: { src: "../../images/ID.png" } }),
                 _vm._v(" "),
                 _c("router-link", { staticClass: "a", attrs: { to: "#" } }, [
-                  _vm._v("Nomor KTP")
+                  _vm._v("Nomor PLAT")
                 ]),
                 _vm._v(" "),
-                _c("p", [_vm._v("160709001")])
+                _c("p", [_vm._v("AB 9001 BC")])
               ],
               1
             ),
@@ -60126,12 +60126,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   mounted: function mounted() {
-    this.geolocate();
-    this.getMotorLocation();
+    this.getLocation();
+    this.setRealtime();
   },
 
 
   methods: {
+    getLocation: function getLocation() {
+      this.geolocate();
+      this.getMotorLocation();
+    },
+
     geolocate: function geolocate() {
       var _this = this;
 
@@ -60156,6 +60161,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).catch(function (error) {
         console.log(error.response);
       });
+    },
+    setRealtime: function setRealtime() {
+      var _this3 = this;
+
+      this.interval = setInterval(function () {
+        return _this3.getLocation();
+      }, 2000);
     }
   }
 

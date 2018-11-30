@@ -39,11 +39,15 @@ export default {
   },
 
   mounted() {
-    this.geolocate();
-    this.getMotorLocation();
+    this.getLocation();
+    this.setRealtime();
   },
 
   methods: {
+    getLocation(){
+      this.geolocate();
+    this.getMotorLocation();
+    },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
         this.center = {
@@ -64,9 +68,10 @@ export default {
           }).catch(error => {
               console.log(error.response)
           });
-    }
-  
-
+    },
+    setRealtime(){
+      this.interval = setInterval(() => this.getLocation(), 2000);
+    }  
   }
      
 };

@@ -14,8 +14,8 @@
           </div>
           <div class="friend">
             <img :src="'../../images/ID.png'">
-              <router-link class="a" to="#">Nomor KTP</router-link>
-            <p>160709001</p>
+              <router-link class="a" to="#">Nomor PLAT</router-link>
+            <p>AB 9001 BC</p>
           </div>
           <div class="friend">
             <img :src="'../../images/Nomor.png'">
