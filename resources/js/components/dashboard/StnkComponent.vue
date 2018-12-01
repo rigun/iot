@@ -13,7 +13,7 @@
             <p>Agung Prio Rismawan</p>
           </div>
           <div class="friend">
-            <img :src="'../../images/ID.png'">
+            <img :src="'../../images/iD.png'">
               <router-link class="a" to="#">Nomor PLAT</router-link>
             <p>AB 9001 BC</p>
           </div>

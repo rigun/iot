@@ -59685,7 +59685,7 @@ var render = function() {
               "div",
               { staticClass: "friend" },
               [
-                _c("img", { attrs: { src: "../../images/ID.png" } }),
+                _c("img", { attrs: { src: "../../images/iD.png" } }),
                 _vm._v(" "),
                 _c("router-link", { staticClass: "a", attrs: { to: "#" } }, [
                   _vm._v("Nomor PLAT")
