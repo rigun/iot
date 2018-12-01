@@ -60104,6 +60104,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60130,6 +60131,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     getLocation: function getLocation() {
       this.geolocate();
       this.getMotorLocation();
+      this.getData();
     },
 
     geolocate: function geolocate() {
@@ -60140,7 +60142,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        _this.markers.push({ position: _this.center }, { position: _this.destination });
+        _this.markers.push({ position: _this.center }, { position: _this.center });
         _this.places.push(_this.center);
       });
     },
@@ -60153,6 +60155,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         _this2.destination.lat = parseFloat(response.data.longitude);
         _this2.destination.lng = parseFloat(response.data.latitude);
+      }).catch(function (error) {
+        console.log(error.response);
+      });
+    },
+    getData: function getData() {
+      var uri = '"http://iot.thekingcorp.org/api/place/arduino/6ab703fb42a7b87d5f977f212a82f7ae8cc164a9705d05ebf1616f41feaa5553a7071f17c193099fbd7ae97e092e64e45f54d45891f856a76619513b0805ae4e/' + this.center.lat + "/" + this.center.lng;
+      axios.get(uri).then(function (response) {
+        console.log(response);
       }).catch(function (error) {
         console.log(error.response);
       });
@@ -60198,7 +60208,16 @@ var render = function() {
             }
           })
         })
-      )
+      ),
+      _vm._v(" "),
+      _c("h2", [
+        _vm._v(
+          "Lokasi saat ini : " +
+            _vm._s(_vm.center.lat) +
+            " " +
+            _vm._s(_vm.center.lng)
+        )
+      ])
     ],
     1
   )
