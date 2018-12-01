@@ -57993,7 +57993,7 @@ var render = function() {
                       attrs: { "aria-hidden": "true" }
                     }),
                     _vm._v(" "),
-                    _c("span", [_vm._v("Motor Location")])
+                    _c("span", [_vm._v("Motor STNK")])
                   ])
                 ],
                 1
