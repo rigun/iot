@@ -72,7 +72,7 @@ export default {
           });
     },
     getData(){
-          let uri = '"http://iot.thekingcorp.org/api/place/arduino/6ab703fb42a7b87d5f977f212a82f7ae8cc164a9705d05ebf1616f41feaa5553a7071f17c193099fbd7ae97e092e64e45f54d45891f856a76619513b0805ae4e/'+this.center.lat+"/"+this.center.lng;
+          let uri = '/api/place/arduino/6ab703fb42a7b87d5f977f212a82f7ae8cc164a9705d05ebf1616f41feaa5553a7071f17c193099fbd7ae97e092e64e45f54d45891f856a76619513b0805ae4e/'+this.center.lat+'/'+this.center.lng;
           axios.get(uri).then((response) => {
             console.log(response)
           }).catch(error => {
